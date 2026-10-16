@@ -17,3 +17,9 @@ __pycache__/
 
 # OS noise
 .DS_Store
+
+# Course self-study (see CLAUDE.md "This Project"): code repos are cloned per coding
+# day and not tracked; compiled Typst output and on-demand PDFs are rebuildable.
+repos/
+work/**/*.pdf
+course/pdf/

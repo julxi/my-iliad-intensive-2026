@@ -1,0 +1,4 @@
+# Read by ripgrep (and tools built on it), not by git. Keeps the official exercise
+# solutions out of code searches so an agent can't read them by accident; agents may
+# open them only when Julian asks (CLAUDE.md, section "This Project").
+course/solutions/

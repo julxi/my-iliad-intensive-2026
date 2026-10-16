@@ -1,0 +1,13 @@
+[project]
+name = "my-iliad-intensive-2026"
+version = "0.1.0"
+description = "Julian's self-study of the ILIAD intensive: course fetch script and exercise work"
+requires-python = ">=3.12"
+dependencies = [
+    "pyyaml",
+    "requests",
+]
+
+[tool.uv]
+# Scripts only, nothing to install as a package; uv just manages .venv from this file.
+package = false
