@@ -12,7 +12,7 @@ A team of one, so no user-identification step is needed.
 
 ## Current status and goals
 
-Structure set up 26-10-16: `uv run scripts/fetch_course.py` fetches the course into `course/` (output currently removed; Julian commits the script first, then the fetch), Julian's Typst write-ups go in `work/`, sparring rules are in CLAUDE.md. Next: start the course at day 0 (Prerequisites), following the schedule.
+Structure set up 26-10-16: `uv run scripts/fetch_course.py` fetches the course into `course/` (committed), Julian's Typst write-ups go in `work/`, sparring rules are in CLAUDE.md. In progress: day 0 (Prerequisites) and day A.1 (Session 3 next), following the schedule.
 
 ## Maintenance
 
@@ -30,3 +30,5 @@ All discussions live in `convos/{user}/`. **When starting a new topic, add a row
 |------|------|-------|--------|---------|-----|
 | 26-10-15 | julian | Memory system setup | Done | [SUMMARY](convos/julian/26-10-15_project_setup_SUMMARY.md) | [LOG](convos/julian/26-10-15_project_setup_LOG.md) |
 | 26-10-15 | julian | Project structure for self-study | Done; course fetched, rules in CLAUDE.md | [SUMMARY](convos/julian/26-10-15_project_structure_SUMMARY.md) | [LOG](convos/julian/26-10-15_project_structure_LOG.md) |
+| 26-10-16 | julian | Day 0: Prerequisites | Write-up skeleton ready; Julian filling in source notes | [SUMMARY](convos/julian/26-10-16_prerequisites_SUMMARY.md) | [LOG](convos/julian/26-10-16_prerequisites_LOG.md) |
+| 26-10-23 | julian | Day A.1: AI Alignment Introduction | Sessions 1–2 answered; Session 2 under discussion | [SUMMARY](convos/julian/26-10-23_A1_alignment_intro_SUMMARY.md) | [LOG](convos/julian/26-10-23_A1_alignment_intro_LOG.md) |
