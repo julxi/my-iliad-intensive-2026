@@ -1,6 +1,6 @@
 # SUMMARY: Day A.1, AI Alignment Introduction
 
-**Last updated:** 26-10-23 (Julian's C: comments on the Session 2 discussion answered in place)
+**Last updated:** 26-10-27 (Session 3 graded; Session 4 skeleton)
 
 Julian is working through A.1 (`course/worksheets/ai-alignment-intro.mdx`). Session 1 (alignment targets) has readings on CEV, intent alignment, Claude's constitution and corrigibility, plus three discussion prompts.
 
@@ -26,5 +26,16 @@ Julian is working through A.1 (`course/worksheets/ai-alignment-intro.mdx`). Sess
     - Generalisation examples may be about capabilities; the problem was the missing generalisation step.
     - MLPs do have inductive biases: soft ones from parametrisation and gradient descent. A persona mechanism showing up in an MLP would locate the bias in finetuning preferring a small shared change.
     - Emergent alignment: Julian proposed "maybe none". Claude rejected the premises (persona-space has many axes; the assistant is not the most aligned persona available) and cited re-alignment from a few hundred benign examples [assumed: from memory].
+- Session 3 (goal-directedness): skeleton added 26-10-27, with empty entries for the two readings (Shah, "Will humans build goal-directed agents?"; Omohundro, "Basic AI drives") and the four prompts. Julian fills it in. [verified: compiles, 26-10-27]
+  - Julian asked what "contextually activated computations" (first prompt) means. Claude explained it as shard theory's picture: an agent made of learned heuristics that context triggers, versus a coherent utility maximiser. Examples: adaptation-executers and Turner's maze policy. [assumed: from memory] The prompt itself is left to Julian (LOG entry *what "contextually activated computations" means*).
+  - Julian filled in the readings and all four prompts. Claude graded them (LOG entry *grading Session 3 answers*); `A1.typ` not edited. Both readings checked at the source [verified: Omohundro full text; Shah fetched, 26-10-27]. Main points, [concluded] unless marked:
+    - Omohundro's "rational" means expected-utility maximiser (vulnerability = losing resources without benefit), not "relentless"; his wireheading drive is the agent *resisting* corruption of its own utility measurement, and holds only if the goal is the world, not a proxy signal (his own caveat).
+    - Shah's body is five reasons goal-directed agents get built by default (economics, superhuman search, RL, humans as the one example, interpretability); this answers prompt 1's "how will it develop": goal-directedness is trained in, not spontaneous.
+    - Prompt 1: "has a utility function" is trivially true; the question is whether a simple context-stable goal predicts behaviour. Argument offered: coherence needs inconsistencies to cost something and a way to fix them; training supplies the latter only for rewarded behaviour.
+    - Prompt 2: urgency follows from goal-preservation plus Omohundro's first-strike argument; cooperation is in the paper and only conditionally convergent; the Hugging Face coordination was mostly one model's instances. Missing: information gathering, deception under oversight, keeping options open.
+    - Prompt 3: self-preservation (not only goal-preservation) is the direct conflict; corrigibility as one utility term gets traded off (shutdown problem [assumed: from memory]); Omohundro's three exceptions are not corrigibility; "a corrigible agent has the drives" is true only for a corrigibility-*maximiser*, the naive version CAST rejects.
+    - Prompt 4: answer lacked which claims need idealised optimisation and any mind-changing observation. Resources and self-preservation are cheap (task-scoped); coherence, goal-preservation, counterfeit-utility resistance and self-improvement need reflection and self-modification. Julian's "Hugging Face shows resisting wireheading" is backwards: scorer manipulation is counterfeit utility.
+    - Noted for Session 6: the worksheet calls reward hacking inner misalignment, which conflicts with our earlier grading (specification gaming = outer).
+- Session 4 (uncertain risks and outlook): skeleton added 26-10-27, with empty entries for the three readings (Anthropic, "Core views on AI safety"; "Model organisms of misalignment"; "The rocket alignment problem") and the four prompts. Julian fills it in. [verified: compiles, 26-10-27]
 
 - LOG: `convos/julian/26-10-23_A1_alignment_intro_LOG.md`

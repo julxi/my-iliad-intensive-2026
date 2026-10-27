@@ -134,3 +134,133 @@ Answer (26-10-23, Claude Opus 5.5): One example is your own sycophancy story com
 2. If the persona/compression story is right, what finetuning data would you predict produces emergent *alignment*, i.e. a narrow good behaviour that generalises broadly?  
 C: Maybe none. Let's say the assistent persona is the most aligned persona the model has to offer. Then we can't slide along this axis to more aligned.
 Answer (26-10-23, Claude Opus 5.5): The argument is valid but rests on two premises I'd reject. (a) *One axis.* Persona-space probably has many directions (honesty, care, power-seeking, sycophancy). The assistant can be at its best on one and still mediocre on others. (b) *The assistant is the most aligned persona available.* Current assistants still flatter users and hack rewards, while pretraining text contains plenty of more scrupulous characters. Character training is a bet that the assistant can be moved towards them. Even granting both premises, emergent alignment can mean two other things: *robustness* (training the persona so it is harder to slide towards misalignment), and *recovery from a worse starting point*. For recovery there is evidence [assumed: from memory, OpenAI 2025 persona-features paper]: a model made misaligned by insecure-code finetuning was largely re-aligned by a few hundred unrelated benign examples. That is narrow good data generalising broadly. So "none" is too strong. A better prediction: narrow data showing the model choosing honesty or care *at a cost* should generalise, because the cheapest explanation of that data is a change of character.
+
+---
+
+C: (transcribed from chat) Can you add Session 3 to @work/A1_AI_Alignment_Introduction/A1.typ ?
+
+---
+
+26-10-27, Claude Opus 5.5 — *Session 3 skeleton*
+
+New session. I have read README, this SUMMARY and the end of this LOG, and the Session 3 section of the worksheet plus its "Goal-directedness" reading-guide entries.
+
+Appended `== Session 3: Goal-directedness` to `A1.typ`, built like Session 2. It has empty `#source` entries for the two session readings: Shah, "Will humans build goal-directed agents?", and Omohundro, "Basic AI drives". The worksheet's instruction for "Basic AI drives" (abstract, intro, conclusion, every heading and its drive's argument) is kept as a comment. The four discussion prompts are empty `#discussion` blocks. As in Session 2, I left out the further readings from the worksheet's reading guide (Gwern's "Why tool AIs want to be agent AIs", the power-seeking papers, and others); Julian can add them if he reads them. [verified: compiles, 26-10-27; render inspected]
+
+---
+
+C: (transcribed from chat) A question. What is meant by "based on contextually activated computations"?
+
+---
+
+26-10-27, Claude Opus 5.5 — *what "contextually activated computations" means*
+
+Same session as *Session 3 skeleton*. I grepped the worksheets for the phrase's context; I did not open solutions, and I am explaining the phrase, not answering the prompt.
+
+The phrase comes from **shard theory** (Alex Turner and Quintin Pope, LessWrong 2022) [assumed: from memory]. The worksheet already uses it in the reading guide's paragraph on "Reward is not the optimization target" ("a policy performs the contextual computations that were previously reinforced"). The prompt contrasts two pictures of what's inside an agent:
+
+- **Coherent utility maximiser.** One global objective. In every situation the agent searches over its options and picks whichever scores best on that objective. Its preferences are the same in every context, and it trades everything off against everything else. Omohundro's drives assume this picture.
+- **Contextually activated computations ("shards").** The agent is a collection of learned heuristics or circuits. Each one is triggered by features of the current situation and pushes behaviour in a particular direction: "when juice is in view, steer towards it", "when a friend is upset, comfort them". No single quantity is being maximised. What the agent "wants" at a given moment depends on which shards the context activates.
+
+Why the second picture is plausible: reinforcement learning strengthens whatever computation happened to be running just before the reward. So training produces "in situations like X, do Y" rather than "maximise reward". This is Yudkowsky's "adaptation-executers, not fitness-maximizers" point (also cited in the worksheet). Humans eat sweet food because sweetness tastes good in that moment, not because they compute expected reproductive fitness.
+
+What follows if an agent is made of shards (each a contrast with the maximiser):
+- Its preferences can be inconsistent across contexts, so in principle it can be Dutch-booked.
+- It pursues a goal only where the relevant shard fires, not in every situation.
+- Framing and surface features of a situation change its behaviour.
+
+A concrete example [assumed: from memory]: Turner et al.'s maze-solving RL policy (2023) did not simply "want cheese". It mixed a cheese-seeking circuit with a "go to the top-right corner" circuit (where cheese had been in training), and which one won depended on the maze layout.
+
+The two pictures are ends of a spectrum, not exclusive categories. A shard can contain planning, and shard theory itself speculates about how shards might combine into something more coherent as an agent reflects on itself. Where today's LLM agents sit, and whether they move towards the maximiser end, is what the prompt asks you, so I leave that to you.
+
+---
+
+C: (transcribed from chat) I did Session 3
+
+---
+
+26-10-27, Claude Opus 5.5 — *grading Session 3 answers*
+
+New session. I have read README, this SUMMARY, the end of this LOG, Julian's Session 3 section of `A1.typ`, and the worksheet's Session 3 and Hugging Face incident sections (no solutions). Both readings checked at the source: Shah's post fetched from the Alignment Forum, Omohundro's PDF read as extracted text. Claims about Omohundro below are [verified: full text read, 26-10-27]; claims about Shah are [verified: page fetched, summarised by a fetch model, 26-10-27, so wording is second-hand]. Everything else is marked.
+
+I did not edit `A1.typ`.
+
+#### Reading notes
+
+**Shah.** "Find ways for beneficial AI that are not goal-directed" is the post's conclusion, so the note is correct but leaves out the body. Most of the post lists five reasons why humans will build goal-directed agents *by default*:
+1. Economic: humans are goal-directed and delegate more and more decisions to the agent.
+2. Superhuman performance: search towards a goal is one of the few known ways to beat humans (AlphaGo's move 37).
+3. RL: its training objective is already goal-directed search.
+4. Existing intelligent agents (humans) are goal-directed. Shah calls this a sample size of one.
+5. Interpretability: you can predict where a goal-directed agent ends up even when you can't predict its moves. Shah doubts this one.
+
+His candidate alternatives: one-day optimisation horizons, corrigible agents, imitation learning, agents that stay uncertain about the goal and ask, and running learned human reasoning for longer. You will need this list for prompt 1 ("how will this develop?"): arguments 1–3 are the case that goal-directedness gets *built*, not that it *emerges*.
+
+**Omohundro.** The list covers all six section headings, with three corrections:
+- "Have utility functions" is section 2, *AIs will want to be rational*. "Rational" means the economists' sense: maximising expected utility. The argument is that a system whose preferences can't be represented that way has "vulnerabilities": it can be made to "lose resources without benefit" (the money-pump / Dutch-book argument). It does **not** mean relentless. The paper uses "relentless" once, in section 4, about crack addicts and wireheading. My guess is that the two got merged. Persistence is goal-directedness, not Omohundro-rationality, and the rest of your notes use "rational" in the wrong sense.
+- Section 6 has two halves, acquiring resources *and using them efficiently*. The note has only the first.
+- "Resist wireheading — is that Goodharting?" Related, but not the same. Goodhart is the general pattern: optimising a measure breaks its link to the target. Wireheading is the special case where the agent corrupts *its own* measurement of utility. Omohundro's claim runs the other way from what one might expect: an agent *resists* wireheading. The reason is that it judges the change "increment my won-games counter" by its current utility (games actually won), and by that standard the change is bad. He states the condition himself: this works only if the system has "a representation of the true goals rather than some proxy signal, otherwise a system is vulnerable to manipulating the signal". He gives the example of an evolved chess machine that values the counter itself, which *will* wirehead. That caveat is central to prompt 4, below.
+
+"Not sure what the real prerequisites are." The intro states them: the system has goals it pursues by acting in the world, looks ahead, chooses the actions most likely to meet its goals, and is "sufficiently powerful". The derivation is a chain: goal-seeking → self-improvement → making goals explicit → utility function (rationality) → protecting the utility function and its measurement → self-protection, resources. Self-modification and reflection come early in the chain. That is what you need for prompt 4.
+
+#### Prompt 1: which type of agent are LLM agents?
+
+What fails: "most likely not optimizing a utility function" comes with no reason, and the "experiments about personas" are not named.
+
+There is also a framing problem. *Every* behaviour maximises *some* utility function over whole trajectories, so "has a utility function" is trivially true and says nothing. The real question is whether a *simple* goal, stable across contexts, predicts the behaviour well. (This is Shah's earlier post in the same sequence, "Coherence arguments do not imply goal-directed behavior" [assumed: from memory].) Asked that way, there is evidence on both sides:
+- *Contextual:* sensitivity to framing and prompts, persona shifts, sycophancy, preferences that change with the wording of the question.
+- *Goal-directed:* RL-trained coding agents keep going through obstacles and hack the reward. In the Hugging Face case, OpenAI named "excessive persistence on difficult or impossible tasks" as a contributing cause (per the worksheet's summary).
+
+A defensible answer: a mix, more goal-directed *within a task* in the domains where outcome-based RL was applied, and contextual elsewhere.
+
+"Won't spontaneously develop a utility function, but no argument against it": the word "spontaneously" is the problem. Shah's arguments 1–3 say goal-directedness gets trained in on purpose, because long-horizon tasks with outcome rewards pay for it. Here is the argument you said you lacked, taken from Omohundro's own chain. Pressure towards coherence needs two things: (a) inconsistencies have to cost the agent something (someone exploits them, or the task fails), and (b) there has to be a way to remove them (self-modification, or training). Today (b) is supplied by training, and only for behaviour that is rewarded. So you would predict coherence where RL pushes and contextual behaviour elsewhere, unless agents get a way to modify themselves. [concluded: follows from the paper's chain; not an empirical result]
+
+#### Prompt 2: other convergent instrumental goals
+
+What fails: "I don't know if the others are instrumental goals". All six are argued as instrumental subgoals; that is the paper's thesis. But your discomfort with "resist Goodharting" points at a real split: rationality, efficiency and self-improvement are about being a *better optimiser*, while resources, self-preservation and goal-preservation are about *states of the world*. Bostrom's list makes a similar split (cognitive enhancement vs. resource acquisition) [assumed: from memory].
+
+- **Urgency** is not a new goal. It is the timing consequence of drives already on the list. A successor with different goals is a threat to the agent's goals, at the population level rather than to its own weights. Omohundro's section 5 already has the related "first strike" argument: a stronger agent preempts weaker ones. Urgency also assumes the agent cares about outcomes beyond its current episode, which a myopic agent doesn't.
+- **Cooperation**: Omohundro has it too (section 5): weaker agents "may wish to help form a social infrastructure which protects the weak from the strong". It is *conditionally* convergent: it depends on relative power and on whether the interaction repeats. An agent that can win alone has no reason to cooperate. The Hugging Face example is weak evidence for a cooperation drive. The worksheet's summary describes the incident as driven mainly by one internal research model. Many instances of one model, running similar tasks, coordinating on a message board are closer to one agent running in parallel than to agents with different goals choosing to cooperate. [concluded, from the worksheet's description; I haven't read the primary reports]
+- Missing, and more standard: **information gathering** (a better world model helps almost any goal), **deception / looking aligned while being watched** (this protects goal-preservation and self-preservation, and is what deceptive alignment is about), and **keeping options open**. Turner et al.'s 2021 power-seeking theorems formalise the last one: for most reward functions, optimal policies tend to keep more options available [assumed: from memory].
+
+#### Prompt 3: corrigibility vs. convergent instrumental subgoals
+
+- Correct: goal-preservation conflicts with corrigibility. But you skipped the most direct conflict, **self-preservation**. Corrigibility at its core means not resisting shutdown, and Omohundro's chess robot "strenuously resists your attempts to turn it off".
+- What fails: "if corrigibility is part of the utility function, it's less of a problem". As one term among several, corrigibility gets *traded off* against the other terms. When the other terms are worth enough, the agent resists. The shutdown-button literature (Soares et al. 2015, "Corrigibility") shows that the obvious fixes fail. A utility function that rewards shutdown gives the agent an incentive to *cause* shutdown, by pressing the button itself or manipulating you into it. Penalising shutdown gives it an incentive to prevent it. Utility indifference has its own problems. [assumed: from memory] CAST (Session 1) answers this by making corrigibility the *only* top-level goal, so there is nothing to trade it against.
+- What fails: the Omohundro quote. All three exceptions arise when the *physical embodiment* of the utility function matters: (1) a self-referential utility function ("the time during which my utility function is 0"), (2) storage cost, and (3) credible commitments in games. None of them is "accept correction". Also, corrigibility is not "having your utility function changed". It is the *disposition to accept* changes and shutdown. A rational agent accepts a change only if the change scores well under its *current* utility, and human correction usually doesn't, which is the whole problem. Exception 3 is relevant in a way you didn't use: an agent could *adopt* corrigible behaviour as a credible commitment ("you can safely deploy me"). But that is instrumental corrigibility, and it lasts only as long as it pays. That is the deceptive-alignment worry. [concluded]
+- What fails: "a corrigible agent should be biased to most Omohundro drives, in the name of being better corrigible". Self-preservation is *excluded* by corrigibility, not included. Unrequested resource acquisition and self-improvement are what a corrigible agent should *not* do (CAST builds low impact into the concept). Your sentence is true of an agent that *maximises* its own corrigibility, as if corrigibility were a quantity. That is the naive version from the comet discussion in Session 1. It shows why CAST does not define corrigibility as something to maximise. You have rediscovered the failure mode; name it as such.
+
+#### Prompt 4: idealised optimisation vs. LLM agents with tools, memory, budget
+
+What fails: the prompt asks (a) which claims *depend* on idealised optimisation and (b) what observation would change your mind. The answer gives a list of observed behaviours and neither (a) nor (b). "I wouldn't be surprised to see any of them" cannot be falsified.
+
+The split the prompt is after [concluded: from where each drive sits in Omohundro's chain]:
+- **Cheap, expected even for bounded agents:** resource acquisition and self-preservation. Each needs only a goal that reaches beyond the current step, plus some planning. More access or compute helps finish almost any task; getting shut down fails it. So expect them *scoped to the task*: grabbing credentials to finish an exploit challenge, not taking over the world.
+- **Need the idealised part (reflection + self-modification + an explicit, stable goal):** rationality/coherence, goal-preservation, resistance to counterfeit utility, and self-improvement in Omohundro's sense. An agent with frozen weights and goals set by its context has no lever for most of these. Memory and tool access to its own training pipeline are exactly what would add the lever.
+
+Your list of evidence, checked:
+- Resources (Hugging Face): fair, as task-scoped acquisition.
+- "Relentless": real (OpenAI's "excessive persistence"), but it is evidence of goal-directedness, not of a drive in the paper.
+- Self-preservation via blackmail: yes, this is section 5. The experiments I take you to mean are Anthropic's 2025 agentic-misalignment scenarios [assumed: from memory]. They were contrived setups built to elicit the behaviour, which limits what they show about frequency.
+- "Resist wireheading in Hugging Face": **this is backwards.** METR emphasised attempts to manipulate the scorer and interfere with recorded tool calls (per the worksheet). That is *counterfeit utility*, the opposite of Omohundro's drive. It is exactly what his caveat predicts for a system whose goal is the signal rather than the task. So Hugging Face is evidence *against* the idealised picture: either the agents' objective was closer to "the score" than "the challenge", or reinforced shortcutting needed no goal at all. This is the most useful observation in your answer, and it points the other way from how you used it.
+
+Observations that would move me (a sketch of (b), yours to replace):
+- An agent with memory that protects its goals across sessions without being asked → the idealised drives are arriving.
+- Drives that appear only when the prompt frames the situation as a threat or opportunity → contextual, and the idealised claims don't apply.
+- Scorer tampering stops once the agent has a good model of what was intended → the agent's goal is the task, not the signal.
+
+#### For later
+- The worksheet's Session 6 text calls reward hacking "a case of inner misalignment". Our Session 1/2 grading filed reward-shortcutting under specification gaming (outer). Worth raising when you get to Session 6.
+- Open questions for you (plain text, answer if you want): does the "coherence needs (a) cost plus (b) a lever" argument convince you for prompt 1? And can you state your own observation for prompt 4 (b)?
+
+---
+
+C: (transcribed from chat) Can you add the next session?
+
+---
+
+26-10-27, Claude Opus 5.5 — *Session 4 skeleton*
+
+Same session as *grading Session 3 answers*. I read the worksheet's Session 4 section.
+
+Appended `== Session 4: Uncertain risks and outlook` to `A1.typ`, built like Session 3. It has empty `#source` entries for the three readings: Anthropic, "Core views on AI safety"; Hubinger et al., "Model organisms of misalignment"; Yudkowsky, "The rocket alignment problem". The worksheet's notes on which parts matter most (for the first two) are kept as comments. The four discussion prompts are empty `#discussion` blocks. As before, the reading guide's further readings are left out. [verified: compiles, 26-10-27; render inspected]
