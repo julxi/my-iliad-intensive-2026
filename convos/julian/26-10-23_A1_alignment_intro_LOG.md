@@ -264,3 +264,74 @@ C: (transcribed from chat) Can you add the next session?
 Same session as *grading Session 3 answers*. I read the worksheet's Session 4 section.
 
 Appended `== Session 4: Uncertain risks and outlook` to `A1.typ`, built like Session 3. It has empty `#source` entries for the three readings: Anthropic, "Core views on AI safety"; Hubinger et al., "Model organisms of misalignment"; Yudkowsky, "The rocket alignment problem". The worksheet's notes on which parts matter most (for the first two) are kept as comments. The four discussion prompts are empty `#discussion` blocks. As before, the reading guide's further readings are left out. [verified: compiles, 26-10-27; render inspected]
+
+C: I think it's better for me to do the tasks here and then do my own summary in A1.typ. Let's do the dicussion right in the log. I think the log should work quite well for smaller discussions with some back and forth.
+
+Core views on AI safety:
+- AI will be transformative
+- AI might automate all knowledge work
+- empirical science of frontier models:
+    - empirical because it drives knowledge
+    - frontier because of emergent abilities
+- scenarios:
+    - optimistic: we have basically all the tools for safe AI, other things matter more
+    - intermediate: we can find the right tools but need more research
+    - pessimistic: we cannot create safe AI systems
+- safety research:
+    - mech interp: understand the machanisms inside a model
+    - scalable oversight: create human aligned data at scale and reliably
+    - process-oriented learning: the ends don't justify the means
+    - understanding generalisation: how does training data grove the mind of the model
+    - testing for dangerous failure modes: the model ogranisms approach. How likely can bad behaviour emerge
+    - societal impacts and evaluations: something about society
+
+---
+
+26-10-28, Claude Opus 5.5 — *checking the Core Views reading notes*
+
+New session. I have read README, this SUMMARY, the whole LOG, and the worksheet's Session 4 section (no solutions). I checked your notes against the post itself: two web fetches of anthropic.com/news/core-views-on-ai-safety, 26-10-28, summarised by a fetch model. The quotes below are short verbatim fragments, so treat the wording as second-hand. Where I mark [verified], that is what it means.
+
+Agreed on the workflow: do the tasks and back-and-forth here, then write your own summary in `A1.typ`. I won't touch `A1.typ` for Session 4 unless you ask.
+
+Strict-grader mode on the notes, ordered by the three sections the worksheet marks as most important.
+
+**"Taking a portfolio approach": the main point is missing**
+
+You list the three scenarios, but not what the section *does* with them, and that is its whole argument. [verified: fetch, 26-10-28]
+- Anthropic says it doesn't know which scenario we are in, and that "one of our top priorities is continuing to gather more information about what kind of scenario we're in."
+- It commits to acting "under the assumption that we still may be in such a scenario" (the pessimistic one) "unless we have sufficient evidence that we are not."
+- Each scenario has its own job: optimistic → speed up beneficial uses and handle misuse and structural risks; intermediate → identify the risks and find safe training methods; pessimistic → "sound the alarm" so institutions can act, and push for a pause.
+
+That is what "portfolio" means: research chosen to pay off whichever scenario turns out to be true, *plus* research that tells you which one you are in. Prompt 1 asks which scenario we live in. The post's answer is "we don't know, and finding out is part of the job", so your note needs it.
+C: that doesn't matter here. The reading is for the definition of various terms.
+
+Scenario wording: optimistic is fine. The post names RLHF and Constitutional AI as "already largely sufficient". Pessimistic is too vague. The claim is specific: "we cannot control or dictate values to a system that's broadly more intellectually capable than ourselves." That is a claim about superhuman systems, not about safe AI in general, and it links to the rocket-alignment reading.
+C: I think for a summary you have to boil things down sometimes. I think my wording is the interesting special case for AI safety.
+
+**"Empiricism" and "frontier models": one reason out of five**
+
+- *"Empirical because it drives knowledge"* is roughly right, but say it the way the post does: it is "hard to make rapid progress in science and engineering without close contact with our object of study."
+C: I like to phrase things my own way. If you can identify an important concept my phrasing is missing spit it out.
+- *"Frontier because of emergent abilities"* is one of the five reasons the post gives. The other four: (2) serious safety concerns "might only arise with near-human-level systems"; (3) some safety methods "can only work on large models"; (4) we need to know how safety properties change with scale; (5) if large models are dangerous, "it's essential we develop compelling evidence this is the case." [verified: fetch, 26-10-28] Reason 5 matters most for this session: the model-organisms post is essentially a plan for producing that evidence.  
+C: for me (2)-(5) reads as "emergent abilities" for different reasons
+- Missing as well: the cost. The post admits that frontier work risks speeding up dangerous deployments, and argues that too much caution would leave safety research "far behind the frontier". Any answer to prompt 4 (theoretical vs empirical) needs this trade-off.
+- Missing context for prompt 1 ("how has the evidence changed?"): the post's own forecast. Impact "could start to arrive soon – perhaps in the coming decade"; in a footnote, "a greater than 10% likelihood" of broadly human-level AI within the decade; the basis is compute growing "10x per year" plus scaling laws. [verified: fetch, 26-10-28] The post is from March 2023 [assumed: from memory; the fetch didn't give the date], so you can compare its forecast with what has happened since.  
+C: The summary doesn't need to contain all things that are needed for the discussion.
+
+**Research areas**
+
+Note: the post lists these under "Our current safety research", not under the portfolio section. It also sorts research into three types, which you skipped: capabilities, *alignment capabilities* ("blue team", new training methods) and *alignment science* ("red team", evaluating whether systems really are aligned). [verified: fetch, 26-10-28] That split is a ready-made axis for prompt 4.
+
+- *Mech interp*: fine. Add the purpose: auditing models for unsafe behaviour. The post calls it a "big, risky bet".
+- *Scalable oversight, "create human aligned data at scale and reliably"*: this misses the key idea. The problem is that humans can't evaluate accurately enough, or often enough, once systems do things beyond human level. The approach is to use AI to help supervise AI, so that a small amount of human feedback steers a much larger amount of AI supervision. It also covers automated red-teaming. Making data is a by-product, not the point.  
+C: Ok so: oversee AI at scale even if it's trying to fool us 
+- *Process-oriented learning, "the ends don't justify the means"*: a good gist. Add the safety reason: if you reward a process humans understand rather than any outcome, the model has no incentive to find strategies you can't see. That is the cure for the reward-hacking and scorer-tampering cases from Session 3.
+- *Understanding generalisation*: "grove" is presumably "grow"/"shape". Add the method: tracing outputs back to training data (influence functions).  
+C: I meant groove. Like how the data chisels the model out of the random starting point
+- *Dangerous failure modes, "the model organisms approach. How likely can bad behaviour emerge"*: making that link is good. Two corrections. The post's version is to deliberately train risky properties such as deception into *small, non-dangerous* models, so the method is "build it on purpose and study it", which is not the same as measuring how likely it is to arise on its own. And Anthropic says it won't do this on models that could cause serious harm.  
+C: Ok. Study it.
+- *Societal impacts, "something about society"*: this is not a note. Content: tools for measuring capabilities, limitations and societal effects, used to inform policy. It connects to reason 5 above: evaluations are how "compelling evidence" reaches policymakers.  
+C: true, but this will not influence the discussion.
+
+**A question to carry into the next reading** (plain text; answer if you want): the post says it will assume the pessimistic case until there is "sufficient evidence" otherwise. What would sufficient evidence look like? Keep that in mind while reading the model-organisms post. Can a model organism ever show we are *not* in a pessimistic world, or only that we are in one?  
+C: you don't need to look forward to the discussion. Everything in due time. Sometimes I leave stuff out because I don't think it's going to be relevant for the discussion. I don't need to note every little detail

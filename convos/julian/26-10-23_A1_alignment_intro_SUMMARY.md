@@ -1,6 +1,6 @@
 # SUMMARY: Day A.1, AI Alignment Introduction
 
-**Last updated:** 26-10-27 (Session 3 graded; Session 4 skeleton)
+**Last updated:** 26-10-28 (Session 4 Core Views notes checked)
 
 Julian is working through A.1 (`course/worksheets/ai-alignment-intro.mdx`). Session 1 (alignment targets) has readings on CEV, intent alignment, Claude's constitution and corrigibility, plus three discussion prompts.
 
@@ -37,5 +37,11 @@ Julian is working through A.1 (`course/worksheets/ai-alignment-intro.mdx`). Sess
     - Prompt 4: answer lacked which claims need idealised optimisation and any mind-changing observation. Resources and self-preservation are cheap (task-scoped); coherence, goal-preservation, counterfeit-utility resistance and self-improvement need reflection and self-modification. Julian's "Hugging Face shows resisting wireheading" is backwards: scorer manipulation is counterfeit utility.
     - Noted for Session 6: the worksheet calls reward hacking inner misalignment, which conflicts with our earlier grading (specification gaming = outer).
 - Session 4 (uncertain risks and outlook): skeleton added 26-10-27, with empty entries for the three readings (Anthropic, "Core views on AI safety"; "Model organisms of misalignment"; "The rocket alignment problem") and the four prompts. Julian fills it in. [verified: compiles, 26-10-27]
+  - Workflow change from Session 4 on: Julian works on the tasks and the back-and-forth in this LOG, then writes his own summary in `A1.typ`. Claude doesn't edit `A1.typ` for Session 4 unless asked.
+  - Julian's notes on "Core views on AI safety" were checked against the post (LOG entry *checking the Core Views reading notes*; [verified: two web fetches, 26-10-28, wording via a fetch model]). Main points, [concluded] unless marked:
+    - The portfolio section's actual argument is missing: Anthropic doesn't know which scenario we're in, makes finding out a top priority, and acts as if the pessimistic case holds unless evidence says otherwise. Each scenario has its own job. The pessimistic case is specifically about controlling a smarter system.
+    - "Frontier because of emergent abilities" is one of five reasons. The rest: concerns appear only near human level; some methods only work at scale; safety changes with scale; producing compelling evidence of danger. The cost (speeding up deployment) and the forecast (>10% human-level AI within a decade) are missing too.
+    - Research areas: scalable oversight is AI helping humans supervise AI, not data generation. "Testing failure modes" builds risky properties into small models on purpose. "Societal impacts" had no content. The capabilities / alignment capabilities / alignment science split was skipped.
+    - Open question: can a model organism ever show we are *not* in a pessimistic world?
 
 - LOG: `convos/julian/26-10-23_A1_alignment_intro_LOG.md`
