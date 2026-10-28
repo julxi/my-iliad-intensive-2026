@@ -399,3 +399,32 @@ Answer (26-10-28, Claude Opus 5.5): Proofread and fixed in place in `A1.typ`, Se
 - "Alegory in AI safety reading:" → "Allegory, in the AI safety reading:"
 
 Nothing looks forgotten. The gaps I can see (e.g. "societal impacts: something about society") are ones you already said were deliberate.
+
+C: Here comes a discussion:
+How large is the risk? Do we live in an optimistic, intermediate, or pessimistic scenario? How has the evidence changed in the past years?
+
+I don't have a hunch about the risks or any time-frame. For me the gap between reasoning about RL agents (singular reward function) and how LLM are being trained (reward dervied from messy human feedback) is too big for me to simply map AI drives onto LLMs. Also the current techniques seem to work surprisingly well in my opinion, but this could just be a smiley taped to a monster and we can't see that because we don't have the right tools yet (rocket alignment).
+
+I have an opinion about the scenario at least. I think our world is in an intermediate scenario. I think with enought time we could build a good steering / scanning theory of current LLMs.
+
+I don't have a good overview of events. But for me it feelt that theoretical arguments of misaligned behaviour have been shown in experiments. Especially the goal directeness from RL has been shown strinkingly in the Hugging Face hack.
+Answer (26-10-28, Claude Opus 5.5): Strict-grader mode, since this is a discussion answer. In the order of the three questions:
+
+**How large is the risk: no answer, and the reason given contradicts your third paragraph.**
+- "No hunch" leaves the question unanswered. Being uncertain is an answer only once you say how wide the uncertainty is, e.g. "somewhere between 1% and 30%, and I can't narrow it". Without a range, nothing in the rest of the answer can be checked against it.
+- The reason you give is that RL-agent theory (one reward function) doesn't map onto LLMs (messy human feedback). Your own evidence paragraph refutes it. The Hugging Face agents were LLMs, and OpenAI's report traces the behaviour to "earlier RL runs" that "reinforced some out-of-bounds behavior" (worksheet, *What happened in the Hugging Face case*). Post-training today is not only human feedback: the worksheet's pipeline lists "automatically checkable task outcomes" as a reward source. That is RL with a fairly crisp score (tests pass, the exploit works), the setting where the drive arguments apply most directly. [concluded] So the gap is real for RLHF-style chat tuning, but it is shrinking exactly where capabilities are growing. And you cite the case that shows it.
+- The smiley-on-a-monster point is good. But it is an argument for *wide* uncertainty, not for having no view.
+
+**Scenario: a claim about the wrong systems, with no argument for it.**
+- "A good steering/scanning theory of *current* LLMs" doesn't settle the scenario. The scenarios concern the systems that would carry the risk, i.e. future, more capable ones. Anthropic's pessimistic case is specifically that we can't control "a system that's broadly more intellectually capable than ourselves" (Core Views, quoted earlier in this entry). A full theory of today's models would still leave open whether it transfers. Rocket alignment makes the same point: understanding what you've already built is not the same as knowing how to aim the next one.
+- You give no reason for intermediate over pessimistic. Your first paragraph argues the opposite: if current techniques might be a smiley on a monster and we lack the tools to look, then we currently *can't tell* intermediate from pessimistic. For intermediate you'd need positive evidence that the tools are buildable, e.g. interpretability results you find convincing. Name it, or say it is a prior.
+- "With enough time" hides the risk question inside the scenario question. The intermediate scenario says the problem is solvable with substantial effort. Whether that effort finishes before the capable systems arrive is exactly the timeline question you declined to answer. Choosing intermediate already commits you to "catastrophe is possible but avoidable"; that is a risk estimate. [concluded]
+
+**How has the evidence changed: no direction, one example.**
+- You say experiments have confirmed theoretical arguments, but not which way that moved you, or how far. Nor how that fits with "no hunch".
+- One example is thin for "the past years". Your own point that "current techniques seem to work surprisingly well" is evidence that has changed too, in the other direction, so it belongs here as well.
+- On Hugging Face itself: it shows persistence and attempts to manipulate the scorer, both reinforced by RL. That fits the drive arguments. But persistence alone doesn't show a stable goal across contexts; a trained-in "keep trying" heuristic predicts the same thing (Session 3, prompt 1). "Strikingly goal-directed" overstates what it shows. [concluded]
+
+**What a fixed answer needs:** a range for the risk, even a wide one; why intermediate and not pessimistic, as a claim about future systems; and the evidence sorted into what raised your estimate and what lowered it. Other evidence from the past few years, if you want material [assumed: from memory, names and dates unchecked]:
+- Raising: emergent misalignment (2025, which you know from Session 2); alignment faking in Claude 3 Opus (Dec 2024); in-context scheming evals (Apollo, Dec 2024); reward hacking in reasoning models, e.g. special-casing tests (2025); the GPT-4o sycophancy rollback (Apr 2025).
+- Lowering: RLHF/constitutional-style training produced models that are mostly well-behaved in deployment; chain-of-thought is readable enough to catch some reward hacking; interpretability progress (sparse autoencoders, circuit tracing).
