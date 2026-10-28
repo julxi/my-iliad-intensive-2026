@@ -1,6 +1,6 @@
 # SUMMARY: Day A.1, AI Alignment Introduction
 
-**Last updated:** 26-10-28 (Session 4 Core Views notes checked)
+**Last updated:** 26-10-28 (Session 4 Core Views notes checked; Julian replied)
 
 Julian is working through A.1 (`course/worksheets/ai-alignment-intro.mdx`). Session 1 (alignment targets) has readings on CEV, intent alignment, Claude's constitution and corrigibility, plus three discussion prompts.
 
@@ -42,6 +42,7 @@ Julian is working through A.1 (`course/worksheets/ai-alignment-intro.mdx`). Sess
     - The portfolio section's actual argument is missing: Anthropic doesn't know which scenario we're in, makes finding out a top priority, and acts as if the pessimistic case holds unless evidence says otherwise. Each scenario has its own job. The pessimistic case is specifically about controlling a smarter system.
     - "Frontier because of emergent abilities" is one of five reasons. The rest: concerns appear only near human level; some methods only work at scale; safety changes with scale; producing compelling evidence of danger. The cost (speeding up deployment) and the forecast (>10% human-level AI within a decade) are missing too.
     - Research areas: scalable oversight is AI helping humans supervise AI, not data generation. "Testing failure modes" builds risky properties into small models on purpose. "Societal impacts" had no content. The capabilities / alignment capabilities / alignment science split was skipped.
-    - Open question: can a model organism ever show we are *not* in a pessimistic world?
+    - Julian replied with C: comments, answered in place. The reading notes are meant to define terms, not to summarise the argument or prepare for the discussion. Standing preference from then on [decided: Julian's C: comments in that entry]: check reading notes for errors and missing key concepts only, not completeness, and don't point ahead to the prompts. Discussion answers are still graded strictly.
+    - What survives the replies: empiricism means studying real models rather than idealised agents. Of the frontier reasons, two are emergence (problems appear with scale, safety changes with scale), but two are not: the safety tools themselves need scale, and only frontier evidence persuades. Scalable oversight means overseeing tasks humans can't evaluate; deception is the worst case, not the definition. Claude withdrew its objection to Julian's pessimistic-scenario wording.
 
 - LOG: `convos/julian/26-10-23_A1_alignment_intro_LOG.md`

@@ -162,6 +162,11 @@ A corrigible agent should be biased to most of the omohundro drives even just in
 ]
 
 #discussion[Which instrumental-convergence claims depend on idealized optimization, and which would you expect from a language-model agent with tools, memory and a limited budget? What observation would make you change your answer?][
+
+What is idealized optimization?
+
+The following passage is besides the point:
+
 As I said, I don't have a good model of how LLMs tick. I wouldn't be surprised to see all of the drives (exccept for having single utility function).
 We've seen:
 - aquiring resources (hacking hugging face for info)
@@ -179,6 +184,22 @@ The only one left is self-improvement but it wouldn't surprise me at all.
 // Worksheet: most important sections are "Our Approach: Empiricism in AI Safety",
 // "The role of frontier models in AI safety" and "Taking a portfolio approach to AI safety".
 #source("Core views on AI safety", url: "https://www.anthropic.com/news/core-views-on-ai-safety")[
+- AI will be transformative
+- AI might automate all knowledge work
+- empirical science of frontier models:
+    - empirical because it drives knowledge
+    - frontier because of emergent abilities
+- scenarios:
+    - optimistic: we have basically all the tools for safe AI, other things matter more
+    - intermediate: we can find the right tools but need more research
+    - pessimistic: we cannot create safe AI systems
+- safety research:
+    - mech interp: understand the machanisms inside a model
+    - scalable oversight: tools for overseeing AI on scale (quantity and complexity)
+    - process-oriented learning: the ends don't justify the means
+    - understanding generalisation: how does training data groove the mind of the model
+    - testing for dangerous failure modes: the model ogranisms approach. Create misaligned models and study them
+    - societal impacts and evaluations: something about society
 ]
 
 // Worksheet: most important is everything before "Examples of Model Organisms [...]".
