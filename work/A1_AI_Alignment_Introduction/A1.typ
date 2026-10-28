@@ -204,6 +204,18 @@ The only one left is self-improvement but it wouldn't surprise me at all.
 
 // Worksheet: most important is everything before "Examples of Model Organisms [...]".
 #source("Model organisms of misalignment", url: "https://www.lesswrong.com/posts/ChDH335ckdvpxXaXX/model-organisms-of-misalignment-the-case-for-a-new-pillar-of-1")[
+Create model organisms to
+- learn about alignment failures:
+    - investigate how likely
+    - what causes them
+    - develpoing/testing techniques to mitigates them
+- inform about AI risks
+
+Degrees of realism of failure:
+1. capability exitst: Models have capabilities to show behaviour
+2. behaviour under special circumstances: Can emerge without being trained specifically
+3. behavior under normal training: Can emerge under realistic training
+4. behavior even under disincentivized training: Behaviour survives active countermeasures
 ]
 
 #source("The rocket alignment problem", url: "https://www.alignmentforum.org/posts/Gg9a4y8reWKtLe3Tn/the-rocket-alignment-problem")[

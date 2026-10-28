@@ -1,6 +1,6 @@
 # SUMMARY: Day A.1, AI Alignment Introduction
 
-**Last updated:** 26-10-28 (Session 4 Core Views notes checked; Julian replied)
+**Last updated:** 26-10-28 (Session 4 Core Views and Model Organisms notes checked)
 
 Julian is working through A.1 (`course/worksheets/ai-alignment-intro.mdx`). Session 1 (alignment targets) has readings on CEV, intent alignment, Claude's constitution and corrigibility, plus three discussion prompts.
 
@@ -44,5 +44,6 @@ Julian is working through A.1 (`course/worksheets/ai-alignment-intro.mdx`). Sess
     - Research areas: scalable oversight is AI helping humans supervise AI, not data generation. "Testing failure modes" builds risky properties into small models on purpose. "Societal impacts" had no content. The capabilities / alignment capabilities / alignment science split was skipped.
     - Julian replied with C: comments, answered in place. The reading notes are meant to define terms, not to summarise the argument or prepare for the discussion. Standing preference from then on [decided: Julian's C: comments in that entry]: check reading notes for errors and missing key concepts only, not completeness, and don't point ahead to the prompts. Discussion answers are still graded strictly.
     - What survives the replies: empiricism means studying real models rather than idealised agents. Of the frontier reasons, two are emergence (problems appear with scale, safety changes with scale), but two are not: the safety tools themselves need scale, and only frontier evidence persuades. Scalable oversight means overseeing tasks humans can't evaluate; deception is the worst case, not the definition. Claude withdrew its objection to Julian's pessimistic-scenario wording.
+  - Julian's notes on "Model organisms of misalignment" (Hubinger et al., Aug 2023) were checked for errors only (answer under his C: comment at the end of that entry; [verified: one web fetch, 26-10-28]). No errors. Claude first wanted level 2 to say the setup is built to make the failure likely. Julian replied that his line describes level 2's point: the behaviour emerges from training at all, while level 1 instils it explicitly. Julian then rewrote the four levels himself (1 capability exists; 2 emerges without being trained for specifically; 3 emerges under realistic training; 4 emerges even under mitigations). Claude confirmed the list is correct [concluded].
 
 - LOG: `convos/julian/26-10-23_A1_alignment_intro_LOG.md`

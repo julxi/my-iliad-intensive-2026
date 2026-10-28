@@ -343,4 +343,30 @@ C: true, but this will not influence the discussion.
 C: you don't need to look forward to the discussion. Everything in due time. Sometimes I leave stuff out because I don't think it's going to be relevant for the discussion. I don't need to note every little detail
 Answer (26-10-28, Claude Opus 5.5): Understood. From now on I check reading notes for errors only: a wrong definition, a misattribution, a concept your phrasing misses. I won't mark them down for leaving things out, and I won't point ahead to the discussion prompts. Discussion answers still get strict grading. I'm noting this as a standing preference so later sessions follow it too.
 
+C: Model Organisms of Misalginment
+create model organisms to
+- learn about alignment failures:
+    - investigate how likely
+    - what causes them
+    - develpoing/testing techniques to mitigates them
+- inform about AI risks
 
+Degrees of realism of failure:
+- capability exitst: models have capability to show behaviour
+- behaviour under special circumstances: behaviour can appear in training
+- behavior under normal training: behaviour can appear in trainign that people actually use
+- behavior even under disincentivized training: even when using mitigating techniques the behavior can be found
+
+Answer (26-10-28, Claude Opus 5.5): I checked these against the post: Hubinger, Schiefer, Denison, Perez, 8 Aug 2023, the part before "Examples of Model Organisms". [verified: one web fetch, 26-10-28; the wording came through a fetch model] Only checking for errors, per your earlier comment.
+
+The goals are right. They match the post's three: how likely failures are and what causes them; which techniques catch or mitigate a failure "when we know it exists"; and informing the AI-risk conversation with "the best evidence of misalignment risks, if any". Levels 1, 3 and 4 are fine too.
+
+One fix, level 2. "Behaviour can appear in training" doesn't separate it from level 3, which is also about training. What defines level 2 is that the training setup is *built to make the failure more likely*. The post's example: deceptive reward hacking found "in a training setup where it is more likely to emerge". So level 2 is a setup rigged towards the failure, and level 3 is ordinary training (their example is RLHF "fairly similar to how people might train text-based assistants"). Suggested wording: "behaviour appears in a training setup designed to make it likely".  
+C: I wanted to describe level 2's intend: behavior can appear through trainign in general.
+Answer (26-10-28, Claude Opus 5.5): Then your note is right, and I withdraw the fix. Read that way, the step from level 1 to level 2 is the one that matters. At level 1 the behaviour is put in on purpose; the post says "with explicit training and/or prompting". At level 2 it *emerges* from a training process that wasn't aiming at it. The "special circumstances" part is already in your heading, so your line doesn't have to repeat it. The only gap: "can appear in training" doesn't say it wasn't trained in directly, and that is exactly what separates it from level 1. If you want it airtight: "behaviour emerges from training without being trained in directly".  
+C: That was an oversight of mine that 1. already contains explicit training of failure mode. Ok, how about this then:
+1. Models have capabilities
+2. Can emerge without being trained specifically
+3. Can emerge under realistic training
+4. Emerges even under mitigating techniques
+Answer (26-10-28, Claude Opus 5.5): That list is correct. Each line separates its level from the one before: 1 → 2 is emergence instead of explicit instilling, 2 → 3 is a rigged setup versus realistic training, 3 → 4 is surviving active countermeasures (the post: a training scheme "explicitly design[ed] to disincentivize it"). One small point: in 1, "capabilities" means the capability *for this particular behaviour*, which the model shows when you train or prompt it to. If your heading names the behaviour, the line is fine as it is.
