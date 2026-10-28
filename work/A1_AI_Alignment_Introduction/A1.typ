@@ -194,11 +194,11 @@ The only one left is self-improvement but it wouldn't surprise me at all.
     - intermediate: we can find the right tools but need more research
     - pessimistic: we cannot create safe AI systems
 - safety research:
-    - mech interp: understand the machanisms inside a model
-    - scalable oversight: tools for overseeing AI on scale (quantity and complexity)
+    - mech interp: understand the mechanisms inside a model
+    - scalable oversight: tools for overseeing AI at scale (quantity and complexity)
     - process-oriented learning: the ends don't justify the means
     - understanding generalisation: how does training data groove the mind of the model
-    - testing for dangerous failure modes: the model ogranisms approach. Create misaligned models and study them
+    - testing for dangerous failure modes: the model organisms approach. Create misaligned models and study them
     - societal impacts and evaluations: something about society
 ]
 
@@ -208,18 +208,18 @@ Create model organisms to
 - learn about alignment failures:
     - investigate how likely
     - what causes them
-    - develpoing/testing techniques to mitigates them
+    - developing/testing techniques to mitigate them
 - inform about AI risks
 
 Degrees of realism of failure:
-1. capability exitst: Models have capabilities to show behaviour
+1. capability exists: Models have capabilities to show behaviour
 2. behaviour under special circumstances: Can emerge without being trained specifically
-3. behavior under normal training: Can emerge under realistic training
-4. behavior even under disincentivized training: Behaviour survives active countermeasures
+3. behaviour under normal training: Can emerge under realistic training
+4. behaviour even under disincentivized training: Behaviour survives active countermeasures
 ]
 
 #source("The rocket alignment problem", url: "https://www.alignmentforum.org/posts/Gg9a4y8reWKtLe3Tn/the-rocket-alignment-problem")[
-Alegory in AI safety reading:
+Allegory, in the AI safety reading:
 - we are so confused about the basic concepts of steering an AI that engineering proposals can't even be assessed
 - we have things that seem like they are working but they might be completely wrong and we can't see how wrong they are before we have the right theory
 - "adjust as we go" could not work / fail horribly

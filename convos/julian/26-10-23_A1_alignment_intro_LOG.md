@@ -390,3 +390,12 @@ C: ok, so my take is.
 Answer (26-10-28, Claude Opus 5.5): Both points are right, and the second is in the post [verified: web fetch, 26-10-28; the wording came through a fetch model]. Beth says that with the nose lined up on the Moon, "the rocket may not actually end up at the Moon". She also says vague designs have "achieved the safety of nobody being able to prove to them that they're wrong": a plan that looks fine because nobody can yet say how it would fail.
 
 One concept your phrasing misses: why "adjust as you go" doesn't rescue you. Two reasons, and both are in the post. You can't see the error, which is your second point, and the error can't be undone: "if you screwed up, you won't just be able to turn around." Your second point covers half of it; the irreversibility is the other half.
+
+C: ok, I've added the reading notes to `A1.typ`. Can you proofread them? Only if you think I've really forgotten (not deliberatly ignored) something flag it.
+Answer (26-10-28, Claude Opus 5.5): Proofread and fixed in place in `A1.typ`, Session 4 readings only; spelling and grammar, no content changes. [verified: compiles, 26-10-28]
+- machanisms → mechanisms; ogranisms → organisms; develpoing → developing; exitst → exists; Alegory → Allegory
+- "techniques to mitigates them" → "to mitigate them"; "overseeing AI on scale" → "at scale"
+- "behavior" → "behaviour" in model-organism levels 3 and 4, to match "behaviour" everywhere else in the notes
+- "Alegory in AI safety reading:" → "Allegory, in the AI safety reading:"
+
+Nothing looks forgotten. The gaps I can see (e.g. "societal impacts: something about society") are ones you already said were deliberate.
