@@ -219,6 +219,10 @@ Degrees of realism of failure:
 ]
 
 #source("The rocket alignment problem", url: "https://www.alignmentforum.org/posts/Gg9a4y8reWKtLe3Tn/the-rocket-alignment-problem")[
+Alegory in AI safety reading:
+- we are so confused about the basic concepts of steering an AI that engineering proposals can't even be assessed
+- we have things that seem like they are working but they might be completely wrong and we can't see how wrong they are before we have the right theory
+- "adjust as we go" could not work / fail horribly
 ]
 
 === Discussion
