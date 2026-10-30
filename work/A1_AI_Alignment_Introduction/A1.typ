@@ -228,6 +228,19 @@ Allegory, in the AI safety reading:
 === Discussion
 
 #discussion[How large is the risk? Do we live in an optimistic, intermediate, or pessimistic scenario? How has the evidence changed in the past years?][
+
+I think the risk is non-negligible. However, we don't have a good theory of how LLMs think, so it's hard to say whether we are far away or close enough for course corrections to work.
+
+Part of the risk is uncertainty about the nature of LLMs, in particular what happens if a lot of their training is RLVR.
+I could imagine (but I find it unlikely) that current LLMs with loads of RLVR will at worst produce psychopathic achievers (the cheap drives: acquiring resources, avoiding being stopped, persisting) that stay local in scope. They will create chaos but won't pose an existential risk on their own, and we can learn from the failures.
+I find it more likely that, if we are not cautious, we could in the future create an agent driven by the full set of AI drives: maybe not textbook-clean, but good enough for human extinction. Even the psychopathic achiever, let loose on an impossible task, could decide to use all of humanity's resources rather than give up.
+
+I'm cautiously hopeful that current techniques will actually be enough to prevent a broadly unaligned agent from popping up. Hopeful, because I have seen techniques like steering and probing that seem to work for now. Cautiously, because we don't have a good theory that says they are enough.
+I think we are in an intermediate scenario. I described above that I don't think we are in an optimistic one. I also don't think we are in a pessimistic one. I think there is a path in the manifold "capability × goals" from human to benevolent omniscience that we could trace with small enough steps.
+
+Generally, the evidence of the past years has strengthened the AI drives arguments. We see intermediate (instrumental) goals pop up in systems that rely heavily on RL.
+People are also getting better at seeing and steering what's inside.
+But to decide where we actually stand or what we are missing, we still lack a good theory of alignment. We don't even know if alignment is the right problem.
 ]
 
 #discussion[Can you think of model organisms for misalignment that were published after the post came out in 2023? Does this change our understanding of the risks?][
