@@ -1,6 +1,6 @@
 # SUMMARY: Day A.1, AI Alignment Introduction
 
-**Last updated:** 26-10-28 (Session 4 prompt 1 answered by Julian and graded)
+**Last updated:** 26-10-30 (Julian's replies to the Session 4 prompt 1 grading answered)
 
 Julian is working through A.1 (`course/worksheets/ai-alignment-intro.mdx`). Session 1 (alignment targets) has readings on CEV, intent alignment, Claude's constitution and corrigibility, plus three discussion prompts.
 
@@ -52,6 +52,11 @@ Julian is working through A.1 (`course/worksheets/ai-alignment-intro.mdx`). Sess
     - The RL/LLM-gap reason is contradicted by his own Hugging Face example (an LLM whose behaviour OpenAI traces to RL runs) and by RL on checkable outcomes in current post-training.
     - The scenario claim is about current LLMs, but the scenarios concern future, more capable systems. No argument is given for intermediate over pessimistic; his smiley point cuts against telling them apart. "With enough time" hides the timeline question.
     - Evidence: no direction of update stated, one example only, and "techniques work well" is itself changed evidence. Hugging Face shows trained persistence and scorer manipulation, not a stable goal.
-    - Claude listed further evidence both ways [assumed: from memory].
+    - Julian removed Claude's closing list ("what a fixed answer needs", with further evidence both ways) from the LOG in commit f1bbb4e; it survives in git history.
+    - Julian's replies (C: comments, answered in place 26-10-30), [concluded] unless marked:
+      - Risk: Julian holds that past some uncertainty no probability can be given, but takes the risk seriously because the arguments are compelling and the stakes catastrophic. Claude: that is a lower bound and counts as an answer; a range that can't be narrowed is fine, no bound at all isn't. Claude withdrew "declined to answer" and gave ways to estimate under deep uncertainty: decomposition, weighting Beth's view against his, betting odds as bounds, researcher surveys [assumed: from memory].
+      - RL/LLM gap: Claude split "is training becoming more like RL on outcomes" (yes, reasoning-model RL since 2024 [assumed: from memory]) from "could good RLHF suffice" (open). Julian's new point, careless execution (the incident's model was evaluated with reduced safeguards, per the worksheet), raises risk even in an intermediate world.
+      - Scenario: Julian clarified it as "scaled-up interpretability (monitoring hidden goals, steering) of current-architecture LLMs is enough", an optimistic prior. Claude: a coherent reply to rocket alignment (instruments to see the error); state the architecture condition; detection is not a fix, since training against a monitor teaches hiding. Claude listed interpretability evidence both ways (hidden-objective audits, sleeper-agent probes, persona vectors, circuit tracing vs. obfuscation under optimisation, SAE coverage, planted vs. natural goals) [assumed: from memory].
+      - Hugging Face: Julian argued a goal-driven shard is enough. Claude agreed for the cheap drives (task-scoped resources, persistence, avoiding being stopped), not for goal-preservation or long-term power-seeking; longer training tasks blur the line.
 
 - LOG: `convos/julian/26-10-23_A1_alignment_intro_LOG.md`
